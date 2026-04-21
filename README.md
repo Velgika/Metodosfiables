@@ -8,7 +8,7 @@ Final project for the Building AI course
 
 ## Summary
 
-VeriFAI: Because Justice Needs Proof, Not Guesses. ⚖️
+VeriFAI: Testing the experts! ⚖️
 
 Judges aren't scientists, but they must guard the truth. VeriFAI bridges that gap. Our app evaluates expert testimony through the 4 pillars of reliability: testing, peer review, error rates, and consensus.
 
@@ -43,29 +43,12 @@ Output: A summary report is generated, providing the user with objective argumen
 ![image of a uu](/uu.png)
 
 
-## Data sources and AI methods
-Where does your data come from? Do you collect it yourself or do you use data collected by someone else?
-If you need to use links, here's an example:
-[Twitter API](https://developer.twitter.com/en/docs)
-
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
-
 ## Challenges
 
 Not all theories and techniques have a method. Consequently, when experts in art gives testimony, the app wont help much. 
-
-## What next?
-
-How could your project grow and become something even more? What kind of skills, what kind of assistance would you  need to move on? 
 
 
 ## Acknowledgments
 
 * Justice system
-* do not use code, images, data etc. from others without permission
-* when you have permission to use other people's materials, always mention the original creator and the open source / Creative Commons licence they've used
-  <br>For example: [Sleeping Cat on Her Back by Umberto Salvagnin](https://commons.wikimedia.org/wiki/File:Sleeping_cat_on_her_back.jpg#filelinks) / [CC BY 2.0](https://creativecommons.org/licenses/by/2.0)
-* etc
+* Helsinky University
