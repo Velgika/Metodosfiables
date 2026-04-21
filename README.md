@@ -66,6 +66,7 @@ For a legal tool, explainability beats accuracy. Every score must trace back to 
 ## Challenges
 
 Not all theories and techniques have a method. Consequently, when experts in art gives testimony, the app wont help much. 
+
 **Absence of evidence vs. evidence of absence** If VeriFAI finds no peer-reviewed paper for a method, that could mean (a) the method is genuinely unvalidated junk science, or (b) the database coverage is incomplete, or (c) the method is so new it hasn't been indexed yet. Communicating this uncertainty honestly — without either alarming the user or giving a false pass — is one of the hardest UX problems in the project.
 
 **Data freshness and coverage gaps** Scientific consensus changes. A method considered gold-standard in 2010 may be discredited by 2024 (bite mark analysis is a real example of this). The data pipeline needs continuous updates, and it needs to handle jurisdictional gaps — NIST covers US forensics well, but a Chilean judge evaluating environmental damage testimony faces a very different landscape.
