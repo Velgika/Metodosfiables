@@ -51,23 +51,30 @@ Output: A summary report is generated, providing the user with objective argumen
 
 **AI methods**
 NLP + information extraction as an entry point. A fine-tuned model reads the expert report and extracts: (1) the methodology name, (2) the claimed error rate, (3) any references cited. This structured output feeds everything downstream.
+
 Retrieval-Augmented Generation (RAG) is the core engine for the four pillars. Instead of relying on an LLM's parametric memory, it embeds the academic corpus and retrieve the top-k relevant documents for each methodology. The LLM then grounds its assessment on real citations — making the output auditable and hallucination-resistant. This is critical for a legal setting where you cannot afford fabricated references.
+
 A hybrid scoring model works best for the reliability index: a transparent rule-based layer (e.g., "if no peer-reviewed paper exists → -30 points on pillar 2") combined with a fine-tuned classifier that handles ambiguous cases. The rule-based component makes the score explainable to judges, which is a non-negotiable requirement in court.
+
 Semantic similarity search (via embeddings) handles the fuzzy matching problem: an expert may call their method "advanced spectral analysis" while the literature calls it "GCMS." Vector search bridges these surface-level naming differences.
+
 Report generation via an LLM (prompted carefully) translates the numerical score and flagged issues into plain legal language — the kind a judge can cite in a ruling. The prompt should enforce citation of specific sources for every claim.
 
-Key design principle
+**Key design principle**
 For a legal tool, explainability beats accuracy. Every score must trace back to a specific data point (a paper, a registry entry, a citation count). A black-box neural score of 73/100 is useless in court; a score of 73/100 because the method has 2 peer-reviewed validations, no known error rate, and appears in no NIST registry is actionable.Sonnet 4.6
 
 ## Challenges
 
 Not all theories and techniques have a method. Consequently, when experts in art gives testimony, the app wont help much. 
 **Absence of evidence vs. evidence of absence** If VeriFAI finds no peer-reviewed paper for a method, that could mean (a) the method is genuinely unvalidated junk science, or (b) the database coverage is incomplete, or (c) the method is so new it hasn't been indexed yet. Communicating this uncertainty honestly — without either alarming the user or giving a false pass — is one of the hardest UX problems in the project.
+
 **Data freshness and coverage gaps** Scientific consensus changes. A method considered gold-standard in 2010 may be discredited by 2024 (bite mark analysis is a real example of this). The data pipeline needs continuous updates, and it needs to handle jurisdictional gaps — NIST covers US forensics well, but a Chilean judge evaluating environmental damage testimony faces a very different landscape.
 
 ## What next?
+
 **Build and curate the training corpus**
 Start collecting and annotating real expert testimony transcripts — especially cases where a court did rule on the admissibility of scientific evidence (Daubert hearings, Frye hearings, appeal rulings). These are the ground truth labels. Even 50–100 well-annotated examples will let test the extraction and scoring pipeline against known outcomes.
+
 **Look specifically at cases where the expert was later discredited or the method was overturned** — bite mark analysis, hair microscopy, and blood spatter interpretation all have rich documented histories of exactly this.
 
 ## Acknowledgments
